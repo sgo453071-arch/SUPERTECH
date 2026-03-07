@@ -2,26 +2,44 @@ import express from "express";
 import path from "path";
 
 const app = express();
-const abspath = path.resolve();
 
-// ✅ Middleware to read form data
+// current directory (webs)
+const webs = path.resolve();
+
+// EXPRESS root folder
+const root = path.join(webs, "..");
+
+// folders
+const images = path.join(root, "IMAGES");
+const routers = path.join(root, "ROUTERS1");
+
 app.use(express.urlencoded({ extended: true }));
+
+// serve images
+app.use("/IMAGES", express.static(images));
+
+// serve router html files
+app.use(express.static(routers));
+
+// serve webs html files
+app.use(express.static(webs));
 
 let verified = false;
 
-// ✅ Age check middleware
+
+// AGE CHECK MIDDLEWARE
 function checkage(req, res, next) {
 
     if (verified) {
         next();
-    } 
-    else {
-        res.sendFile(path.join(abspath, "age.html"));
+    } else {
+        res.sendFile(path.join(webs, "age.html"));
     }
 
 }
 
-// ✅ Verify age route
+
+// VERIFY AGE
 app.get("/verify", (req, res) => {
 
     const age = req.query.age;
@@ -29,45 +47,43 @@ app.get("/verify", (req, res) => {
     if (age >= 18) {
         verified = true;
         res.redirect("/");
-    } 
-    else {
+    } else {
         res.send("Access Denied. Age must be 18+");
     }
 
 });
 
-// ✅ Apply middleware
+
+// APPLY MIDDLEWARE
 app.use(checkage);
 
-// ✅ Serve static files
-app.use(express.static(abspath));
 
-// ✅ Home page
+// MAIN PAGE
 app.get("/", (req, res) => {
-    res.sendFile(path.join(abspath, "main.html"));
+    res.sendFile(path.join(webs, "main.html"));
 });
 
-// ✅ Home page route
-app.get("/home.html", (req, res) => {
-    res.sendFile(path.join(abspath, "home.html"));
+
+// FORM PAGE
+app.get("/form.html", (req, res) => {
+    res.sendFile(path.join(webs, "form.html"));
 });
 
-// ✅ FORM SUBMISSION ROUTE
+
+// FORM SUBMIT
 app.post("/submit", (req, res) => {
-
-    console.log("Form Data Received:");
     console.log(req.body);
-
-    res.send("Form Submitted Successfully!");
-
+    res.send("Form Submitted Successfully");
 });
 
-// ✅ 404 handler
+
+// 404
 app.use((req, res) => {
-    res.status(404).send("PAGE NOT FOUND");
+    res.status(404).send("Page Not Found");
 });
 
-// ✅ Start server
+
+// SERVER
 app.listen(3200, () => {
     console.log("Server running on port 3200");
 });
