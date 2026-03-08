@@ -10,89 +10,91 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 /* NAVBAR */
 .navbar{
-    background-color:#ffe4c4;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 40px;
+background-color:#ffe4c4;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
 }
 
 /* LOGO */
 .logo img{
-    height:60px;
-    width:auto;
+height:60px;
+width:auto;
 }
 
 /* NAV LINKS */
 .nav-links{
-    display:flex;
-    gap:30px;
+display:flex;
+gap:30px;
 }
 
 .nav-links a{
-    text-decoration:none;
-    color:black;
-    font-weight:bold;
-    font-size:16px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+font-size:16px;
 }
 
 .nav-links a:hover{
-    color:blue;
+color:blue;
 }
 
 /* CARD CONTAINER */
 .container{
-    display:flex;
-    justify-content:space-around;
-    padding:40px;
-    gap:10px;
+display:flex;
+justify-content:space-around;
+padding:40px;
+gap:20px;
+flex-wrap:wrap;
 }
 
 /* CARD */
 .card{
-    width:320px;
-    height:400px;
-    background-color:#ffe4c4;
-    border-radius:10px;
-    text-align:center;
-    padding:15px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+width:320px;
+height:400px;
+background-color:#ffe4c4;
+border-radius:10px;
+text-align:center;
+padding:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 .card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:8px;
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:8px;
 }
 
 .card h3{
-    margin:10px 0;
+margin:10px 0;
 }
 
 .card p{
-    font-size:14px;
-    margin-bottom:10px;
+font-size:14px;
+margin-bottom:10px;
 }
 
 .card button{
-    padding:6px 12px;
-    border:none;
-    background-color:black;
-    color:white;
-    border-radius:5px;
-    cursor:pointer;
+padding:6px 12px;
+border:none;
+background-color:black;
+color:white;
+border-radius:5px;
+cursor:pointer;
 }
 
 .card button:hover{
-    background-color:blue;
+background-color:blue;
 }
 
 </style>
@@ -102,10 +104,11 @@
 <body>
 
 <header>
+
 <nav class="navbar">
 
 <div class="logo">
-<img src="/IMAGES/logo.png" alt="SuperTech Logo">
+<img src="/images/logo.png" alt="SuperTech Logo">
 </div>
 
 <div class="nav-links">
@@ -116,59 +119,81 @@
 </div>
 
 </nav>
+
 </header>
 
 <div class="container">
 
 <div class="card">
-<img src="/IMAGES/c1.png" alt="LOADING...">
+
+<img src="/images/c1.png" alt="Course">
+
 <h3>Learning & Enrollment</h3>
+
 <p>
 Start your learning journey by enrolling in our programs.
 We offer structured courses designed to build real-world skills.
 </p>
-<a href="/home.html">
-<button>ENROLL NOW</button>
-</a>
+
+<button onclick="window.location.href='/home.html'">
+ENROLL NOW
+</button>
+
 </div>
 
 <div class="card">
-<img src="/IMAGES/c2.png" alt="LOADING...">
+
+<img src="/images/c2.png" alt="Jobs">
+
 <h3>Job Opportunities</h3>
+
 <p>
 Explore exciting career opportunities with our network of industry partners.
 Build your career with the right guidance and job placements.
 </p>
-<a href="/about.html">
-<button>EXPLORE NOW</button>
-</a>
+
+<button onclick="window.location.href='/about.html'">
+EXPLORE NOW
+</button>
+
 </div>
 
 <div class="card">
-<img src="/IMAGES/c3.png" alt="LOADING...">
+
+<img src="/images/c3.png" alt="Global">
+
 <h3>Global Links</h3>
+
 <p>
 Connect with global communities and opportunities around the world.
 Expand your network beyond boundaries.
 </p>
-<a href="/contact.html">
-<button>CHECK OUT</button>
-</a>
+
+<button onclick="window.location.href='/contact.html'">
+CHECK OUT
+</button>
+
 </div>
 
 <div class="card">
-<img src="/IMAGES/c4.png" alt="LOADING...">
+
+<img src="/images/c4.png" alt="Mentor">
+
 <h3>Mentorship & Support</h3>
+
 <p>
 Get guidance from experienced mentors who support your growth
 and help you succeed at every step.
 </p>
-<a href="/contact.html">
-<button>MENTOR TODAY</button>
-</a>
+
+<button onclick="window.location.href='/contact.html'">
+MENTOR TODAY
+</button>
+
 </div>
 
 </div>
 
 </body>
+
 </html>

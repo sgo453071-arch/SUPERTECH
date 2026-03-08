@@ -1,20 +1,48 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <title>Age Verification</title>
-</head>
 
 <style>
 
+body{
+font-family: Arial;
+text-align:center;
+margin-top:100px;
+}
+
+input{
+padding:10px;
+font-size:16px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background-color:black;
+color:white;
+border:none;
+cursor:pointer;
+}
+
 </style>
+
+</head>
 
 <body>
 
 <h2>Enter Your Age</h2>
 
 <form action="/verify" method="GET">
+
 <input type="number" name="age" placeholder="Enter age" required>
+
+<br>
+
 <button type="submit">Enter Website</button>
+
 </form>
 
 </body>
